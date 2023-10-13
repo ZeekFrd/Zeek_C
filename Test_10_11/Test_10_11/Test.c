@@ -194,10 +194,6 @@
 
 
 
-
-
-
-
 //字符串旋转结果
 //
 //写一个函数，判断一个字符串是否为另外一个字符串旋转之后的字符串。
@@ -304,3 +300,95 @@
 //	}
 //	return 0;
 //}
+
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 1
+
+#include <stdio.h>
+
+//#include<string.h>
+//
+//int is_left_move(char* s1, char* s2)
+//{
+//	//s1和s2字符串长度不相等，直接pass
+//	int len1 = strlen(s1);
+//	int len2 = strlen(s2);
+//	if (len1 != len2)
+//	{
+//		return 0;
+//	}
+//	//s1和s2字符串长度相等
+//	strncat(s1, s1, len1);//复制加长后的s1包含了原s1旋转后的所有结果
+//	if (strstr(s1, s2) == NULL)//找不到s2
+//		return 0;
+//	else
+//		return 1;
+//}
+//
+//
+//int main()
+//{
+//	char s1[20] = """";
+//	// s1复制加长后为 abcdefabcdef 可以包含旋转后的可能结果
+//	char s2[] = """";
+//	int ret = is_left_move(s1, s2);
+//	if (ret == 1)
+//	{
+//		printf("Yes");
+//	}
+//	else
+//	{
+//		printf("No");
+//	}
+//	return 0;
+//
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//#include <stdio.h>
+//
+//
+//void revserse(char* left, char* right)
+//{
+//	//assert(left && right);//检测不为空指针
+//	while (left < right) //设置限定条件，最里面的两个字符交换后停止
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//int main() {
+//	char str[100] = "";
+//	//scanf("%s", &str);//scanf遇到空字符就停止接收
+//	gets(str);
+//	
+//	int len = strlen(str);
+//	revserse(str, str + len - 1);
+//	printf("%s\n", str);
+//	return 0;
+//}
+
+
+
+
+
+
+
