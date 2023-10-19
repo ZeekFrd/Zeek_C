@@ -84,6 +84,11 @@
 //	qsort(arr, sz, sizeof(arr[0]), cmp_int);
 //	print(arr,sz);
 //}
+//int main()
+//{
+//	test1();
+//	return 0;
+//}
 ////////
 
 
@@ -97,6 +102,15 @@
 //	int age;
 //};
 //
+//void print(struct Stu* arr, int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("Name: %s\n", arr[i].name);
+//		printf("Age: %d\n", arr[i].age);
+//	}
+//}
 //
 //int cmp_stu_by_age(const void* p1,const void* p2)
 //{
@@ -110,53 +124,53 @@
 //	struct Stu arr[] = { {"x",3},{"y",2},{"z",1} };
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	qsort(arr, sz, sizeof(arr[0]), cmp_stu_by_age);
+//	print(arr, sz);
 //}
-
 
 
 //3.
+////////////
+struct Stu
+{
+	char name[20];
+	int age;
+};
+
+void print(struct Stu* arr, int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("Name: %s\n", arr[i].name);
+		printf("Age: %d\n", arr[i].age);
+	}
+}
+
+int cmp_stu_by_name(const void* p1, const void* p2)
+{
+	return strcmp(((struct Stu*)p1)->name, ((struct Stu*)p2)->name);
+}
+
+void test3()
+{
+	struct Stu arr[] = { {"y",3},{"x",2},{"z",1} };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	//qsort(arr, sz, sizeof(arr[0]), cmp_stu_by_name);
+	print(arr, sz);
+}
+
+
 //////////////
-//struct Stu
-//{
-//	char name[20];
-//	int age;
-//};
-//
-//void print(int arr[], int sz)
-//{
-//	int i = 0;
-//	for (i = 0; i < sz; i++)
-//	{
-//		printf("%d ", arr[i]);
-//	}
-//}
-//
-//int cmp_stu_by_name(const void* p1, const void* p2)
-//{
-//	return strcmp(((struct Stu*)p1)->name, ((struct Stu*)p2)->name);
-//}
-//
-//void test3()
-//{
-//	struct Stu arr[] = { {"y",3},{"x",2},{"z",1} };
-//	int sz = sizeof(arr) / sizeof(arr[0]);
-//	qsort(arr, sz, sizeof(arr[0]), cmp_stu_by_name);
-//}
-//
-//
-////////////////
-//
-//
-//
-//int main()
-//{
-//	//test1();
-//	//test2();
-//	test3();
-//	return 0;
-//}
 
 
+
+int main()
+{
+	//test1();
+	//test2();
+	test3();
+	return 0;
+}
 
 
 

@@ -87,11 +87,12 @@
 //	bubble_sort(arr, sz, sizeof(arr[0]), cmp_int);
 //	print(arr,sz);
 //}
-
+//
 //int main()
 //{
 //	test1();
-//	
+//	//test2();
+//	//test3();
 //	return 0;
 //}
 
@@ -99,11 +100,15 @@
 
 
 //**********************************
-//测试bubble_sort 排序结构体数据
+//测试bubble_sort 排序结构体整型数据
 //**********************************
 
-
-
+//struct Stu 
+//{
+//	char name[20];
+//	int age;
+//};
+//
 //void print(struct Stu* arr, int sz)
 //{
 //	int i = 0;
@@ -115,12 +120,6 @@
 //}
 //
 //
-//
-//struct Stu 
-//{
-//	char name[20];
-//	int age;
-//};
 //
 //void Swap(char* buf1,char* buf2,int size)
 //{
@@ -161,7 +160,7 @@
 //
 //void test2()
 //{
-//	struct Stu arr[] = { {"z",1},{"d",2},{"p",3} };
+//	struct Stu arr[] = { {"p",3},{"d",2},{"z",1} };
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	bubble_sort(arr, sz, sizeof(arr[0]), cmp_stu_by_age);
 //	print(arr, sz);
@@ -180,13 +179,95 @@
 
 
 
+//**********************************
+//测试bubble_sort 排序结构体字符型数据
+//**********************************
+
+
+
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//};
+//
+//void print(struct Stu* arr, int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("Name: %s\n", arr[i].name);
+//		printf("Age: %d\n", arr[i].age);
+//	}
+//}
+//
+//
+//
+//void Swap(char* buf1, char* buf2, int size)
+//{
+//	int i = 0;
+//	char tmp = 0;
+//	for (i = 0; i < size; i++)
+//	{
+//		tmp = *buf1;
+//		*buf1 = *buf2;
+//		*buf2 = tmp;
+//		buf1++;
+//		buf2++;
+//	}
+//}
+//
+//int cmp_stu_by_age(const void* p1, const void* p2)
+//{
+//	return ((struct Stu*)p1)->name - ((struct Stu*)p2)->name;
+//}
+//
+////实现 类qsort函数
+//void bubble_sort(void* base, int num, int size, int (*cmp)(const void*, const void*))
+//{
+//	int i = 0;
+//	for (i = 0; i < num - 1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < num - i - 1; j++)
+//		{
+//			if (cmp((char*)base + j * size, (char*)base + (j + 1) * size) > 0)
+//			{
+//				Swap((char*)base + j * size, (char*)base + (j + 1) * size, size);
+//			}
+//		}
+//	}
+//
+//}
+//
+//void test3()
+//{
+//	struct Stu arr[] = { {"p",3},{"d",2},{"z",1} };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	bubble_sort(arr, sz, sizeof(arr[0]), cmp_stu_by_age);
+//	print(arr, sz);
+//
+//}
+//
+//
+//int main()
+//{
+//	//test1();
+//	//test2();
+//	test3();
+//	return 0;
+//}
 
 
 
 
 
 
-
-
-
-
+int main()
+{
+	int aa[2][5] = { 10,9,8,7,6,5,4,3,2,1 };
+	int* ptr1 = (int*)(&aa + 1);
+	int* ptr2 = (int*)(*(aa + 1));
+	printf("%d,%d", *(ptr1 - 1), *(ptr2 - 1));
+	return 0;
+}
